@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('description');
             $table->date('date_debut');
             $table->date('date_fin');
-            $table->date('image')->nullable();
+            $table->string('image')->nullable();
             $table->integer('max_participants');
             $table->string('type')->nullable(); // Nouvelle colonn
-            $table->enum('status', ['actif', 'expiré'])->default('actif');
+            $table->enum('status', ['actif', 'expiré','supprimé'])->default('actif');
             // $table->unsignedBigInteger('created_by');
            
             $table->timestamps();

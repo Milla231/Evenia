@@ -18,7 +18,6 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('participant.create') }}" class="btn btn-success mb-3">Ajouter un participant</a>
                         @if (session('retour') == null)
                         @else
                         <span class="alert alert-success">{{ session('retour') }}</span>
@@ -43,7 +42,7 @@
                                         <td class="text-white">{{ $participant->email }}</td>
                                         <td class="text-white">
                                             <!-- Boutons pour afficher les détails et supprimer -->
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="showDetails('{{ $participant->nom }}', '{{ $participant->prenom }}', '{{ $participant->email }}')">Détails</button>
+                                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="showDetails('{{ $participant->nom }}', '{{ $participant->prenom }}', '{{ $participant->email }}')">Détails</button> --}}
                                             
                                             
                                             

@@ -16,7 +16,7 @@ class ParticipantController extends Controller
         $participants = Participant::all();
 
         // Retourner la vue avec les participants
-        return view('page.Participant.index', compact('participants'));
+        return view('pages.Participant.index', compact('participants'));
     }
 
     /**

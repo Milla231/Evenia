@@ -18,9 +18,9 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('tickets.create') }}" class="btn btn-success mb-3">Ajouter un ticket</a>
+
                         @if (session('success'))
-                            <span class="alert alert-success">{{ session('success') }}</span>
+                            <span class="alert alert-success">{{ session('success') }}</span><br>
                         @endif
                         <div class="table-responsive text-white">
                             <table class="table table-striped">

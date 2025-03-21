@@ -11,8 +11,8 @@ Route::get('admin/', function () {
 });
 
 Route::get('/', function () {
-    return view('page.site.home');
-});
+    return view('pages.site.pages.home');
+})->name('home');
 
 
 Route::get('/dashboard', function () {
@@ -35,28 +35,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/evenement/edit/{evenement}', [EvenementController::class,'edit'])->name('evenement.edit');
     Route::put('/evenement/update/{evenement}',[EvenementController::class,'update'])->name('evenement.update');
     Route::get('/evenement/show/{evenement}',[EvenementController::class,'show'])->name('evenement.show');
-    Route::get('/evenement/destroy/{evenement}',[EvenementController::class,'destroy'])->name('evenement.destroy');
+    Route::delete('/evenement/destroy/{evenement}',[EvenementController::class,'destroy'])->name('evenement.destroy');
     
-    // Billet
+    // Ticket
     
-    Route::get('/billet/create', [TicketController::class,'create'])->name('tickets.create');
     Route::get('/tickets/index',[TicketController::class,'index'])->name('tickets.index');
     Route::post('/tickets/store',[TicketController::class,'store'])->name('tickets.store');
-    Route::get('/tickets/edit/{tickets}', [TicketController::class,'edit'])->name('tickets.edit');
-    Route::put('/tickets/update/{tickets}',[TicketController::class,'update'])->name('tickets.update');
     Route::get('/tickets/show/{tickets}',[TicketController::class,'show'])->name('tickets.show');
     Route::delete('/tickets/destroy/{tickets}',[TicketController::class,'destroy'])->name('tickets.destroy');
     
     
     // Participant
     
-    Route::get('/participant/create', [ParticipantController::class,'create'])->name('participant.create');
+  
     Route::get('/participant/index',[ParticipantController::class,'index'])->name('participant.index');
     Route::post('/participant/store',[ParticipantController::class,'store'])->name('participant.store');
-    Route::get('/participant/edit/{participant}', [ParticipantController::class,'edit'])->name('participant.edit');
-    Route::put('/participant/update/{participant}',[ParticipantController::class,'update'])->name('participant.update');
+   
     Route::get('/participant/show/{participant}',[ParticipantController::class,'show'])->name('participant.show');
-    Route::get('/participant/destroy/{participant}',[ParticipantController::class,'destroy'])->name('participant.destroy');
+    Route::delete('/participant/destroy/{participant}',[ParticipantController::class,'destroy'])->name('participant.destroy');
 
 
 

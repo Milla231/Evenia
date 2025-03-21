@@ -16,8 +16,18 @@ class EvenementController extends Controller
         $evenements = Evenement::where('status', '!=', 'supprimé')->get();
 
         // Retourner la vue avec les événements
-        return view('page.Evenement.index', compact('evenements'));
+        return view('pages.Evenement.index', compact('evenements'));
     }
+
+    public function indexe()
+    {
+        // Récupérer uniquement les événements qui ne sont pas supprimés
+        $evenements = Evenement::where('status', '!=', 'supprimé')->get();
+
+        // Retourner la vue avec les événements
+        return view('pages.Evenement.index', compact('evenements'));
+    }
+
 
     /**
      * Afficher le formulaire pour créer un nouvel événement.
@@ -25,7 +35,7 @@ class EvenementController extends Controller
     public function create()
     {
         // Retourner la vue pour créer un événement
-        return view('page.Evenement.create');
+        return view('pages.Evenement.create');
     }
 
     /**
@@ -66,7 +76,7 @@ class EvenementController extends Controller
 
         // Retourner les détails de l'événement
         $participants = $evenement->participants;
-        return view('page.Evenement.show', compact('evenement', 'participants'));
+        return view('pages.Evenement.show', compact('evenement', 'participants'));
     }
 
     /**

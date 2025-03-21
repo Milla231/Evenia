@@ -14,7 +14,7 @@ use Inertia\Response;
 class PasswordController extends Controller
 {
     /**
-     * Show the user's password settings page.
+     * Show the user's password settings pages.
      */
     public function edit(Request $request): Response
     {
