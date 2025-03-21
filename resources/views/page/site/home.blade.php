@@ -61,7 +61,7 @@
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="buy_tkt">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a href="#">Buy Tickets</a>
+                                        {{-- <a href="#">Buy Tickets</a> --}}
                                     </div>
                                 </div>
                             </div>
